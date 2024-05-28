@@ -26,6 +26,7 @@ class Connector {
 
   grpc.ClientChannel grpcClientChannel() {
     var uri = Uri.parse(_uri);
+    print(uri.scheme);
     return createChannel(uri.host, uri.port, uri.scheme == 'https');
   }
 
